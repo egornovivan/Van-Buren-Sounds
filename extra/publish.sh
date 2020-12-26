@@ -13,7 +13,7 @@ for q in lq_ebur128 hq_ebur128 uhq_ebur128; do
   fname="van_buren_sounds_${q}_${version}.zip"
   cp "LICENSE.md" "$q"
   cd "$q"
-  zip "$fname" *
+  zip -r "$fname" *
   mv "$fname" ..
   cd ..
 done
