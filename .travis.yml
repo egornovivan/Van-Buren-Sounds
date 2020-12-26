@@ -1,0 +1,17 @@
+language: minimal
+dist: bionic
+sudo: false
+
+script:
+  - ./extra/publish.sh
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file:
+    - van_buren_sounds*.zip
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
